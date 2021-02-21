@@ -9,7 +9,7 @@
 
 	<body>
 		<form>
-			<table class="table" width="200px" align="center">
+			<table class="tableF" width="200px" align="center">
 				<h2 align="center"> Formulário Feirão </h2>
 				<hr>
 				<br>
@@ -21,18 +21,18 @@
 					<td><input type="text" name="NomeEvento" placeholder="Nome do Evento"></td>
 				</tr>
 				<tr>
-					<td><label for="fname">Data do disparo SMS:</label></td>
+					<td>Data do disparo SMS:</td>
 					<td><input type="date" name="DataDisparo"></td>
 				</tr>
 				<tr>
 					<td><input type="text" name="LocalEvento" placeholder="Local do Evento"></td>
 				</tr>
 				<tr>
-					<td><label for="fname">Data inicial do evento:</label></td>
+					<td>Data inicial do evento:</td>
 					<td><input type="date" name="DataEventoI"></td>
 				</tr>
 				<tr>
-					<td><label for="fname">Data final do evento:</label></td>
+					<td>Data final do evento:</td>
 					<td><input type="date" name="DataEventoF"></td>
 				</tr>
 				<tr>
@@ -43,35 +43,37 @@
 					<td><input type="text" name="CodigoLoja" placeholder="Codigo da Loja"></td>
 				</tr>
 				<tr>
-					<td><label for="fname">Meses anteriores:<br>(escolha apenas uma opção)</label></td>
-					<td><input type="checkbox" name="6d" value="06">
-					<label for="fname">6 meses</label>
-					<input type="checkbox" name="12d" value="12">
-					<label for="fname">12 meses</label>
-					<input type="checkbox" name="18d" value="18">
-					<label for="fname">18 meses</label>
-					<input type="checkbox" name="24d" value="24">
-					<label for="fname">24 meses</label></td>
-				</tr>
-				<tr>
-				<td><label for="fname">Meses em diante:<br>(escolha apenas uma opção)</label></td>
+					<td>Meses anteriores:</td>
 				<td>
-				<input type="checkbox" name="6a" value="06">
-				<label for="fname">6 meses</label>
-				<input type="checkbox" name="12a" value="12">
-				<label for="fname">12 meses</label>
-				<input type="checkbox" name="18a" value="18">
-				<label for="fname">18 meses</label>
-				<input type="checkbox" name="24a" value="24">
-				<label for="fname">24 meses</label>
+					<input type="radio" name="mesesA" value="06">
+					6 meses
+					<input type="radio" name="mesesA" value="12">
+					12 meses
+					<input type="radio" name="mesesA" value="18">
+					18 meses
+					<input type="radio" name="mesesA" value="24">
+					24 meses
 				</td>
 				</tr>
 				<tr>
-				<td><label for="fname">Separar números com ;</label></td>
+					<td>Meses em diante:</td>
+				<td>
+					<input type="radio" name="mesesD" value="06">
+					6 meses
+					<input type="radio" name="mesesD" value="12">
+					12 meses
+					<input type="radio" name="mesesD" value="18">
+					18 meses
+					<input type="radio" name="mesesD" value="24">
+					24 meses
+				</td>
+				</tr>
+				<tr>
+				<td>Separar números com ;</td>
 				<td><input type="text" name="CelularesAdicionais" placeholder="Celulares Adicionais"></td>
 				</tr>
 				<tr>
-				<td><input type="submit" name="enviar" placeholder="enviar" 	value="submit"></td>
+				<td><input type="submit" value="solicitar"></td>
 				<td><input type="reset" value="Limpar"><td>
 				</tr>
 			</table>
