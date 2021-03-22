@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estrutura da tabela `tb_acessos_funcionarios`
 --
+Use bd_formulario_sms;
 
 CREATE TABLE `tb_acessos_funcionarios` (
   `nome_funcionario` varchar(50) NOT NULL,
