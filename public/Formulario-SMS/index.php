@@ -20,9 +20,13 @@
 				<form action="valida_funcional.php" method="post">
 				<tr>
 					<td><input type="password" name="funcional" placeholder="funcional"></input></td>
-					<td><input type="submit" value="entrar"></input></td>
+					<td><input type="submit" value="Entrar"></input></td>
+					<td><input type="button"  value="Registrar"><td>
 					<?php if (isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
 					 	<script>alert('funcional inválida!')</script>
+					<?php } ?>
+					<?php if (isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
+					 	<script>alert('faça o login para acessar a página!')</script>
 					<?php } ?>
 				</tr>
 				</form>
