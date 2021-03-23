@@ -2,8 +2,8 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 22-Mar-2021 às 03:30
+-- Host: localhost
+-- Tempo de geração: 23-Mar-2021 às 22:31
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.2
 
@@ -20,13 +20,12 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_formulario_sms`
 --
-
+use bd_formulario_sms;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `tb_acessos_funcionarios`
 --
-Use bd_formulario_sms;
 
 CREATE TABLE `tb_acessos_funcionarios` (
   `nome_funcionario` varchar(50) NOT NULL,
@@ -50,10 +49,10 @@ INSERT INTO `tb_acessos_funcionarios` (`nome_funcionario`, `funcional`, `email_f
 --
 
 CREATE TABLE `tb_solicitacoes` (
-  `id_solicitacao` int(11) NOT NULL,
+  `id_solicitacao` int(6) NOT NULL,
   `funcional_funcionario` char(7) NOT NULL,
-  `nome_evento` varchar(30) NOT NULL,
-  `local_evento` varchar(50) NOT NULL,
+  `nome_evento` varchar(26) NOT NULL,
+  `local_evento` varchar(33) NOT NULL,
   `data_disparo` date NOT NULL,
   `data_inicial` date NOT NULL,
   `data_final` date NOT NULL,
@@ -63,6 +62,14 @@ CREATE TABLE `tb_solicitacoes` (
   `celulares_adicionais` varchar(200) NOT NULL,
   `fraseologia` varchar(160) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_solicitacoes`
+--
+
+INSERT INTO `tb_solicitacoes` (`id_solicitacao`, `funcional_funcionario`, `nome_evento`, `local_evento`, `data_disparo`, `data_inicial`, `data_final`, `filial`, `meses_q`, `meses_aq`, `celulares_adicionais`, `fraseologia`) VALUES
+(1, '1234567', 'feirao', 'shopping', '2021-03-31', '2021-03-31', '2021-03-31', '123', 6, 6, '11912345678', 'Bradesco Financiamentos: Confira nossas condições no(a) feirao dia 31/03 no(a) shopping. P/ cancelar envie 1'),
+(2, '1234567', 'feirao', 'shopping', '2021-03-31', '2021-03-31', '2021-03-31', '123', 6, 6, '11912345678', 'Bradesco Financiamentos: Confira nossas condições no(a) feirao dia 31/03 no(a) shopping. P/ cancelar envie 1');
 
 --
 -- Índices para tabelas despejadas
@@ -90,7 +97,7 @@ ALTER TABLE `tb_solicitacoes`
 -- AUTO_INCREMENT de tabela `tb_solicitacoes`
 --
 ALTER TABLE `tb_solicitacoes`
-  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_solicitacao` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas

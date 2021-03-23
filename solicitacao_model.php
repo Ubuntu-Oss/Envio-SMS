@@ -7,7 +7,7 @@
 		private $data_disparo;
 		private $data_inicial;
 		private $data_final;
-		private $filial;
+		private $codigo_filial;
 		private $meses_q;
 		private $meses_aq;
 		private $celulares_adicionais;
@@ -21,5 +21,4 @@
 			$this->$atributo = $valor;
 		}
 	}
-
 ?>

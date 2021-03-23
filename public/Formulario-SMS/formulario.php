@@ -35,60 +35,64 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 			<table class="tableF" width="200px" align="center">
 				<h2 align="center"> Formulário de solicitação </h2>
 				<br>
-				<form name="frm" action="solicita.php" method="post">
+				<form name="frm" action="solicitacao_controller.php" method="post">
 					<tr>
 						<td><?php echo ($_SESSION['nome']); ?><br><br></td>
 						<td><?php echo ($_SESSION['email']);?><br><br></td>
 					</tr>
 					<tr>
-						<td><input type="text" id="NomeEvento" name="NomeEvento" placeholder="Nome do evento" required=”true”></td>
-						<td><input type="text" id="LocalEvento" name="LocalEvento" placeholder="Local do evento" required=”true”></td>
+						<td><input type="text" id="NomeEvento" name="NomeEvento" placeholder="Nome do evento" maxlength="26"></td>
+						<td><input type="text" id="LocalEvento" name="LocalEvento" placeholder="Local do evento" maxlength="33"></td>
+					</tr>
+					<tr>
+						<td>max. 26 caracteres</td>
+						<td>max. 33 caracteres</td>
 					</tr>
 					<tr>
 						<td>Data do disparo SMS</td>
-						<td><input type="date" id="DataDisparo" name="DataDisparo" required=”true”></td>
+						<td><input type="date" id="DataDisparo" name="DataDisparo"></td>
 					</tr>
 					<tr>
 						<td>Data inicial do evento</td>
-						<td><input type="date" id="DataEventoI" name="DataEventoI" required=”true”></td>
+						<td><input type="date" id="DataEventoI" name="DataEventoI"></td>
 					</tr>
 					<tr>
 						<td>Data final do evento</td>
-						<td><input type="date" id="DataEventoF" name="DataEventoF" required=”true”></td>
+						<td><input type="date" id="DataEventoF" name="DataEventoF"></td>
 					</tr>
 					<tr>
 						<td>Código da filial.<br>Separar números com (,)</td>
-						<td><input type="text" id="CodigoFilial" name="CodigoFilial" placeholder="Ex. 123,321,456" required=”true”></td>
+						<td><input type="text" id="CodigoFilial" name="CodigoFilial" placeholder="Ex. 123,4321,456" maxlength="15"></td>
 					</tr>
 					<tr>
 						<td>Meses quitados</td>
 					<td>
-						<input type="radio" name="MesesQ" value="06" required=”true”>
+						<input type="radio" name="MesesQ" value="06">
 						6 meses
-						<input type="radio" name="MesesQ" value="12" required=”true”>
+						<input type="radio" name="MesesQ" value="12">
 						12 meses <br>
-						<input type="radio" name="MesesQ" value="18" required=”true”>
+						<input type="radio" name="MesesQ" value="18">
 						18 meses
-						<input type="radio" name="MesesQ" value="24" required=”true”>
+						<input type="radio" name="MesesQ" value="24">
 						24 meses
 					</td>
 					</tr>
 					<tr>
 						<td>Meses a quitar</td>
 					<td>
-						<input type="radio" name="MesesAq"  value="06" required=”true”>
+						<input type="radio" name="MesesAq"  value="06">
 						6 meses
-						<input type="radio" name="MesesAq" value="12" required=”true”>
+						<input type="radio" name="MesesAq" value="12">
 						12 meses <br>
-						<input type="radio" name="MesesAq" value="18" required=”true”>
+						<input type="radio" name="MesesAq" value="18">
 						18 meses 
-						<input type="radio" name="MesesAq" value="24" required=”true”>
+						<input type="radio" name="MesesAq" value="24">
 						24 meses 
 					</td>
 					</tr>
 					<tr>
 					<td>Celulares adicionais.<br>Separar números com (,)</td>
-					<td><input type="text" id="CelularesAdicionais" name="CelularesAdicionais" placeholder="Ex. 11912345678,21912345678"></td>
+					<td><input type="text" id="CelularesAdicionais" name="CelularesAdicionais" placeholder="Ex. 11912345678,21912345678" maxlength="200"></td>
 					</tr>
 					<tr>
 					<td><br><input type="button" value="solicitar" onclick="validarCampos()"></td>
@@ -96,6 +100,9 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 					</tr>
 				</iform>
 			</table>
-		</div>	
+		</div>
+		<?php if (isset($_GET['inclusao']) && $_GET['inclusao'] == 1) { ?>
+				<script>alert('solicitação realizada!')</script>
+		<?php } ?>	
 	</body>
 </html>
