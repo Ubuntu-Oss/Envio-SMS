@@ -47,15 +47,18 @@ function validarCampos(){
 
 	if (erro==2){
 		alert("O campo 'Código da filial' deve ser preenchido apenas com números e caso haja mais de uma filial, separá-las apenas com vírgula.\nEx.: 123,4321,321");
+		frm.CodigoFilial.focus();
 	}
 
- 	if (frm.MesesQ.value == ""){
- 		alert("Escolha uma das opções no campo 'Meses quitados'.");
+ 	if (frm.MesesQ.value == "" || frm.MesesQ.value > 24 || frm.MesesQ.value < 1){
+ 		alert("O campo 'Meses quitados' é obrigatório. Sendo o mínimo 1 e o máximo 24. ");
+ 		frm.MesesQ.focus();
  		erro=1;
  	}
 
- 	if (frm.MesesAq.value == ""){
- 		alert("Escolha uma das opções no campo 'Meses a quitar'.");
+ 	if (frm.MesesAq.value == "" || frm.MesesAq.value > 24 || frm.MesesAq.value < 1){
+ 		alert("O campo 'Meses a quitar' é obrigatório. Sendo o mínimo 1 e o máximo 24.");
+ 		frm.MesesAq.focus();
  		erro=1;
  	}
 
@@ -71,6 +74,7 @@ function validarCampos(){
 
 	if (erro==3){
 		alert("O campo 'Celulares adicionais' deve ser preenchido com DDD e apenas com números, caso haja mais de um celular separe-os apenas com vírgula.\nEx.: 11912345678,21912345678,12912345678");
+		frm.CelularesAdicionais.focus();
 	}
 
 	if (erro==0){

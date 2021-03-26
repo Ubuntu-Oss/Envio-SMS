@@ -8,25 +8,34 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 
 ?>
 
-
+<!DOCTYPE html>
 <html lang="br">
-<meta charset="UTF-8">
-
 	<head>
-		<title>Formulário Feirão</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<script type="text/javascript" src="valida_campos.js"></script>
+		<title>SMS Feirão</title>
 	</head>
 
 	<body>
-		<nav class="navbar navbar-light bg-light">
+		<nav class="navbar navbar-expand-sm navbar-light bg-light">
 			<a class="navbar-brand" href="#">
 				<img src="img/bradesco.png" width="30" height="30" class="d-inline-block align-top" alt="">
 				SMS Feirão
 			</a>
-			<ul class="navbar-nav">
+			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="logoff.php">SAIR</a>
+					<a class="nav-link" href="formulario.php">Formulário</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="solicitacoes.php">Solicitações</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="">Contato</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="logoff.php">Sair</a>
 				</li>
 			</ul>
 
@@ -35,18 +44,14 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 			<table class="tableF" width="200px" align="center">
 				<h2 align="center"> Formulário de solicitação </h2>
 				<br>
-				<form name="frm" action="solicitacao_controller.php" method="post">
+				<form name="frm" action="solicitacao_controller.php?acao=inserir" method="post">
 					<tr>
 						<td><?php echo ($_SESSION['nome']); ?><br><br></td>
 						<td><?php echo ($_SESSION['email']);?><br><br></td>
 					</tr>
 					<tr>
 						<td><input type="text" id="NomeEvento" name="NomeEvento" placeholder="Nome do evento" maxlength="26"></td>
-						<td><input type="text" id="LocalEvento" name="LocalEvento" placeholder="Local do evento" maxlength="33"></td>
-					</tr>
-					<tr>
-						<td>max. 26 caracteres</td>
-						<td>max. 33 caracteres</td>
+						<td><input type="text" id="LocalEvento" name="LocalEvento" placeholder="Local do evento" maxlength="32"></td>
 					</tr>
 					<tr>
 						<td>Data do disparo SMS</td>
@@ -67,27 +72,13 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 					<tr>
 						<td>Meses quitados</td>
 					<td>
-						<input type="radio" name="MesesQ" value="06">
-						6 meses
-						<input type="radio" name="MesesQ" value="12">
-						12 meses <br>
-						<input type="radio" name="MesesQ" value="18">
-						18 meses
-						<input type="radio" name="MesesQ" value="24">
-						24 meses
+						<input type="number" name="MesesQ" id="MesesQ" min="1" max="24">
 					</td>
 					</tr>
 					<tr>
 						<td>Meses a quitar</td>
 					<td>
-						<input type="radio" name="MesesAq"  value="06">
-						6 meses
-						<input type="radio" name="MesesAq" value="12">
-						12 meses <br>
-						<input type="radio" name="MesesAq" value="18">
-						18 meses 
-						<input type="radio" name="MesesAq" value="24">
-						24 meses 
+						<input type="number" name="MesesAq" id="MesesAq" min="1" max="24">
 					</td>
 					</tr>
 					<tr>
@@ -101,8 +92,12 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 				</iform>
 			</table>
 		</div>
-		<?php if (isset($_GET['inclusao']) && $_GET['inclusao'] == 1) { ?>
-				<script>alert('solicitação realizada!')</script>
-		<?php } ?>	
+		<?php if (isset($_GET['inclusao']) && $_GET['inclusao'] == 1)
+				print"<script>alert('solicitação realizada!')</script>"
+		 ?>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   		<script src="js/bootstrap.min.js"></script>	
 	</body>
 </html>

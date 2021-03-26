@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
 <html lang="br">
-<meta charset="UTF-8">
 
 	<head>
-		<title>Formulário Feirão</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<title>SMS Feirão</title>
 	</head>
 
 	<body>
@@ -19,9 +20,8 @@
 			<table class="tableL" align="center" width="200px">
 				<form action="valida_funcional.php" method="post">
 				<tr>
-					<td><input type="password" name="funcional" placeholder="funcional"></input></td>
+					<td><input type="text" name="funcional" placeholder="funcional"></input></td>
 					<td><input type="submit" value="Entrar"></input></td>
-					<td><input type="button"  value="Registrar"><td>
 					<?php if (isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
 					 	<script>alert('funcional inválida!')</script>
 					<?php } ?>

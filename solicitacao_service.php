@@ -26,7 +26,16 @@
 		}
 
 		public function recuperar(){
-
+			$query = "select 
+						t1.id_solicitacao, t2.nome_funcionario, t1.nome_evento, t1.local_evento,
+						t1.data_disparo, t1.data_inicial, t1.data_final, t1.filial, t1.meses_q, t1.meses_aq, 
+						t1.celulares_adicionais, t1.fraseologia
+					  from 
+					  	tb_solicitacoes as t1
+					  	left join tb_acessos_funcionarios as t2 on (t1.funcional_funcionario = t2.funcional)";
+			$stm=$this->conexao->prepare($query);
+			$stm->execute();
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		}
 
 		public function editar(){
