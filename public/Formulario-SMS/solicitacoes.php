@@ -30,7 +30,7 @@ require "solicitacao_controller.php";
 					<a class="nav-link" href="formulario.php">Formulário</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">Solicitações</a>
+					<a class="nav-link" href="solicitacoes.php">Solicitações</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="">Contato</a>
@@ -40,9 +40,9 @@ require "solicitacao_controller.php";
 				</li>
 			</ul>
 		</nav>
-		<h2 align="center"> Solicitações </h2>
-			<div style="font-size: 12px ">
-				<table align="center" border="1" width="99%" >
+		<div class="mt-1 mb-4"><h2 align="center"> Solicitações </h2></div>
+			<div class="px-2"style="font-size: 12px ">
+				<table class="tableF" align="center" border="1" width="100%" >
 					<tr>
 						<th style="text-align:center; width:4%">ID </th>
 						<th style="text-align:center; width:7%">Solicitante</th>

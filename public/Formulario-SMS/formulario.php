@@ -37,17 +37,15 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 				<li class="nav-item">
 					<a class="nav-link" href="logoff.php">Sair</a>
 				</li>
-			</ul>
-
+			</ul>	
 		</nav>
+		<div class="mt-1 mb-4"><h2 align="center"> Formulário de solicitação </h2></div>
 		<div>
 			<table class="tableF" width="200px" align="center">
-				<h2 align="center"> Formulário de solicitação </h2>
-				<br>
 				<form name="frm" action="solicitacao_controller.php?acao=inserir" method="post">
 					<tr>
-						<td><?php echo ($_SESSION['nome']); ?><br><br></td>
-						<td><?php echo ($_SESSION['email']);?><br><br></td>
+						<td><?php echo ($_SESSION['nome']); ?><hr style="border-color:black"></td>
+						<td><?php echo ($_SESSION['email']);?><hr style="border-color:black"></td>
 					</tr>
 					<tr>
 						<td><input type="text" id="NomeEvento" name="NomeEvento" placeholder="Nome do evento" maxlength="26"></td>
