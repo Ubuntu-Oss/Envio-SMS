@@ -15,10 +15,14 @@
 			$_SESSION['funcional'] = $lista[0]['funcional'];
 			$_SESSION['nome'] = $lista[0]['nome_funcionario'];
 			$_SESSION['email'] = $lista[0]['email_funcionario'];
+			$_SESSION['permissao'] = $lista[0]['permissao'];
+
 			header ('location: formulario.php');
 		} else{
 			$_SESSION['autenticado'] = 'NAO';
 			header('location: index.php?login=erro');
 		   }  
+
+
 
 ?>

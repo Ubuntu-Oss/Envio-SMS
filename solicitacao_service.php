@@ -27,7 +27,7 @@
 
 		public function recuperar(){
 			$query = "select 
-						t1.id_solicitacao, t2.nome_funcionario, t1.nome_evento, t1.local_evento,
+						t1.id_solicitacao, t1.feito, t2.nome_funcionario, t1.nome_evento, t1.local_evento,
 						t1.data_disparo, t1.data_inicial, t1.data_final, t1.filial, t1.meses_q, t1.meses_aq, 
 						t1.celulares_adicionais, t1.fraseologia
 					  from 
@@ -38,12 +38,5 @@
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		}
 
-		public function editar(){
-
-		}
-
-		public function exlcuir(){
-			
-		}
 	}
 ?>

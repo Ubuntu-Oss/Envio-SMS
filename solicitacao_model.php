@@ -1,6 +1,7 @@
 <?php
 	class Solicitacao{
 		private $id_solicitacao;
+		private $feito;
 		private $funcional_funcionario;
 		private $nome_evento;
 		private $local_evento;
