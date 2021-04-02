@@ -8,8 +8,9 @@ function validarCampos(){
     if (mes<10){
 		mes = '0'+ mes;
 	}
-	var hoje = ano + '-' + mes + '-' + dia;
-
+	if (dia<10){
+		var hoje = ano + '-' + mes + '-0' + dia;
+	}else {var hoje = ano + '-' + mes + '-' + dia;}
  
  	if (frm.NomeEvento.value == ""){
  		alert("O campo 'Nome do evento' é obrigatório.");

@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+$acao = 'recuperar';
+require "solicitacao_controller.php";
 
 if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 	header('location: index.php?login=erro2');
@@ -10,8 +11,6 @@ if ($_SESSION['permissao'] == 'nao'){
 	header('location: formulario.php?perm_erro=1');
 }
 
-$acao = 'recuperar';
-require "solicitacao_controller.php";
 
 ?>
 
@@ -60,6 +59,12 @@ require "solicitacao_controller.php";
 		<?php if(isset($_GET['erro']) && $_GET['erro'] == 1){ ?>
 			<div class="bg-danger text-white pt-2 mb-2 d-flex justify-content-center">
 				<h5>Erro: base já separada!</h5>
+			</div>
+		<?php } ?>
+
+		<?php if(isset($_GET['erro_f']) && $_GET['erro_f'] != ""){ ?>
+			<div class="bg-danger text-white pt-2 mb-2 d-flex justify-content-center">
+				<h5>Erro: filiais <?= $_GET['erro_f'] ?> inválidas</h5>
 			</div>
 		<?php } ?>
 

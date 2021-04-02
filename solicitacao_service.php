@@ -9,7 +9,7 @@
 		}
 
 		public function inserir(){
-			$query = "insert into tb_solicitacoes(funcional_funcionario, nome_evento, local_evento, data_disparo, data_inicial, data_final, filial, meses_q, meses_aq, celulares_adicionais, fraseologia) VALUES (:funcional,:nome,:local,:datad,:datai,:dataf,:filial,:mesesq,:mesesaq,:celular,:frase);";
+			$query = "INSERT into tb_solicitacoes(funcional_funcionario, nome_evento, local_evento, data_disparo, data_inicial, data_final, filial, meses_q, meses_aq, celulares_adicionais, fraseologia) VALUES (:funcional,:nome,:local,:datad,:datai,:dataf,:filial,:mesesq,:mesesaq,:celular,:frase);";
 			$stm =$this->conexao->prepare($query);
 			$stm->bindValue(':funcional', $this->solicitacao->__get('funcional_funcionario'));
 			$stm->bindValue(':nome', $this->solicitacao->__get('nome_evento'));
@@ -26,7 +26,7 @@
 		}
 
 		public function recuperar(){
-			$query = "select 
+			$query = "SELECT 
 						t1.id_solicitacao, t1.feito, t2.nome_funcionario, t1.nome_evento, t1.local_evento,
 						t1.data_disparo, t1.data_inicial, t1.data_final, t1.filial, t1.meses_q, t1.meses_aq, 
 						t1.celulares_adicionais, t1.fraseologia

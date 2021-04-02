@@ -4,7 +4,7 @@
 	
 		$conexao =  new Conexao();
 		$conexao = $conexao->conectar();
-		$query = "select * from bd_formulario_sms.tb_acessos_funcionarios where funcional = :funcional" ;
+		$query = "SELECT * from bd_formulario_sms.tb_acessos_funcionarios where funcional = :funcional" ;
 		$stmt = $conexao->prepare($query);
 		$stmt->bindValue(':funcional', $_POST['funcional']);
 		$stmt->execute();

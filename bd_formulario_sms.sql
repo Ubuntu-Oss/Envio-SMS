@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 30-Mar-2021 às 21:37
+-- Tempo de geração: 02-Abr-2021 às 19:01
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.2
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_formulario_sms`
 --
-use bd_formulario_sms;
+
 -- --------------------------------------------------------
 
 --
@@ -115,8 +115,10 @@ CREATE TABLE `tb_solicitacoes` (
 --
 
 INSERT INTO `tb_solicitacoes` (`id_solicitacao`, `feito`, `funcional_funcionario`, `nome_evento`, `local_evento`, `data_disparo`, `data_inicial`, `data_final`, `filial`, `meses_q`, `meses_aq`, `celulares_adicionais`, `fraseologia`) VALUES
-(1, 'nao', '1234567', 'Mega feirao Osasco', 'Shopping Osasco Plaza', '2021-03-31', '2021-04-01', '2021-04-02', '100,200,300', 24, 12, '11999999999,11888888888,11777777777', 'Bradesco Financiamentos: Confira nossas condições no(a) Mega feirao Osasco, de 01/04 a 02/04 no(a) Shopping Osasco Plaza. P/ cancelar envie 1'),
-(2, 'nao', '1234567', 'Feirao de seminovos', 'Auto Shopping', '2021-03-31', '2021-04-01', '2021-04-02', '200,400', 24, 24, '11123123123,11321321321,11333333333', 'Bradesco Financiamentos: Confira nossas condições no(a) Feirao de seminovos, de 01/04 a 02/04 no(a) Auto Shopping. P/ cancelar envie 1');
+(1, 'sim', '1234567', 'Mega feirao Osasco', 'Shopping Osasco Plaza', '2021-03-31', '2021-04-01', '2021-04-02', '100,200,300', 24, 12, '11999999999,11888888888,11777777777', 'Bradesco Financiamentos: Confira nossas condições no(a) Mega feirao Osasco, de 01/04 a 02/04 no(a) Shopping Osasco Plaza. P/ cancelar envie 1'),
+(2, 'sim', '1234567', 'Feirao de seminovos', 'Auto Shopping', '2021-03-31', '2021-04-01', '2021-04-02', '123,400,200,325', 24, 24, '11123123123,11321321321,11333333333', 'Bradesco Financiamentos: Confira nossas condições no(a) Feirao de seminovos, de 01/04 a 02/04 no(a) Auto Shopping. P/ cancelar envie 1'),
+(3, 'sim', '1234567', 'Teste', 'Teste', '2021-04-02', '2021-04-03', '2021-04-03', '100,200', 12, 12, '', 'Bradesco Financiamentos: Confira nossas condições no(a) Teste, dia 03/04 no(a) Teste. P/ cancelar envie 1'),
+(4, 'sim', '1234567', 'Mega feirão de usados', 'Shopping Internacional Guarulhos', '2021-04-02', '2021-04-03', '2021-04-04', '100,200', 24, 6, '11977777777,11988888888,1177777725', 'Bradesco Financiamentos: Confira nossas condições no(a) Mega feirão de usados, de 03/04 a 04/04 no(a) Shopping Internacional Guarulhos. P/ cancelar envie 1');
 
 --
 -- Índices para tabelas despejadas
@@ -151,7 +153,7 @@ ALTER TABLE `tb_solicitacoes`
 -- AUTO_INCREMENT de tabela `tb_solicitacoes`
 --
 ALTER TABLE `tb_solicitacoes`
-  MODIFY `id_solicitacao` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_solicitacao` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
