@@ -64,7 +64,7 @@ if ($_SESSION['permissao'] == 'nao'){
 
 		<?php if(isset($_GET['erro_f']) && $_GET['erro_f'] != ""){ ?>
 			<div class="bg-danger text-white pt-2 mb-2 d-flex justify-content-center">
-				<h5>Erro: filiais <?= $_GET['erro_f'] ?> inválidas</h5>
+				<h5>Erro: filiais <?= $_GET['erro_f'] ?> inválidas!</h5>
 			</div>
 		<?php } ?>
 
