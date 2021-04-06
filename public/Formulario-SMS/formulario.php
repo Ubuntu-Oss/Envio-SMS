@@ -48,6 +48,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 			<div class="bg-success pt-2 mb-2 text-white d-flex justify-content-center">
 				<h5> Solicitação realizada! </h5>
 			</div>
+			<script>setTimeout(function(){window.location.href="formulario.php"},3000)</script>
 		<?php } ?>
 		<div class="mt-2 mb-3 d-flex justify-content-center">
 			<h2> Formulário de solicitação </h2>
@@ -59,7 +60,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 			<div class="card-body">
 				<form name="frm" action="solicitacao_controller.php?acao=inserir" method="post">
 					<div class="form-group">
-						<input class="form-control"type="text" id="NomeEvento" name="NomeEvento" placeholder="Nome do evento" maxlength="26">
+						<input class="form-control" type="text" id="NomeEvento" name="NomeEvento" placeholder="Nome do evento" maxlength="26">
 					</div>
 					<div class="form-group">
 						<input class="form-control"type="text" id="LocalEvento" name="LocalEvento" placeholder="Local do evento" maxlength="32">
@@ -78,21 +79,23 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 					</div>
 					<div class="form-group">
 						<label for=CodigoFilial>Códigos das Filiais</label>
-						<input class="form-control" type="text" id="CodigoFilial" name="CodigoFilial" placeholder="Ex. 123,4321,456" maxlength="15">
-						<small>separar números com (,)</small>
+						<input class="form-control" type="text" id="CodigoFilial" name="CodigoFilial" placeholder="Ex. 123,4321,456" maxlength="15" aria-describedby="ajudaFilial">
+						<small id="ajudaFilial">separar números com vírgula.</small>
 					</div>
-					<div class="form-group d-inline-block mr-4 ml-3">
-						<label for="MesesQ">Meses quitados</label>
-						<input class="form-control" type="number" name="MesesQ" id="MesesQ" min="1" max="24">
-					</div>
-					<div class="form-group d-inline-block ml-4">
-						<label for="MesesQ">Meses a quitar</label>
-						<input class="form-control" type="number" name="MesesAq" id="MesesAq" min="1" max="24">
+					<div id="meses" class="form-group row">
+						<div class="form-group col">
+							<label for="MesesQ">Meses quitados</label>
+							<input class="form-control" type="number" name="MesesQ" id="MesesQ" min="1" max="24">
+						</div>
+						<div class="form-group col">
+							<label for="MesesQ">Meses a quitar</label>
+							<input class="form-control" type="number" name="MesesAq" id="MesesAq" min="1" max="24">
+						</div>
 					</div>
 					<div class="form-group">
 						<label for="CelularesAdicionais">Celulares adicionais</label>
-						<input class="form-control" type="textarea" id="CelularesAdicionais" name="CelularesAdicionais" placeholder="Ex. 11912345678,21912345678,13912345678" maxlength="200">
-						<small>separar números com (,)</small>
+						<input class="form-control" type="textarea" id="CelularesAdicionais" name="CelularesAdicionais" placeholder="Ex. 11912345678,21912345678,13912345678" maxlength="200" aria-describedby="ajudaCelular">
+						<small id="ajudaCelular class=">separar números com vírgula.</small>
 					</div>
 					<div class="form-group">
 						<input class="btn btn-block btn-danger"type="button" value="solicitar" onclick="validarCampos()"></td>
@@ -102,8 +105,9 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM'){
 		</div>
 		<?php if(isset($_GET['perm_erro']) && $_GET['perm_erro'] == '1' ){ ?>
 			<script>alert('área restrita ao CRM');</script>
+			<script>window.location.href="formulario.php"</script>
 		<?php } ?>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
    		<script src="js/bootstrap.min.js"></script>	
 	</body>

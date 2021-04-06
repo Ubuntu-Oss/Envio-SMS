@@ -57,9 +57,12 @@
 		 	
 		 	header('location: solicitacoes.php?execucao=1');
 		
-		} else {
-			header('location: solicitacoes.php?erro=1');
-		  }
+		} elseif ($lista[0]['feito'] == "sim"){
+			header('location: solicitacoes.php?execucao=2');
+		  } else{
+	  			
+		  		header('location: solicitacoes.php?erro=1');
+	  		}
 	} else {
 		header('location: solicitacoes.php?erro_f='.$erro_msg);
 	}

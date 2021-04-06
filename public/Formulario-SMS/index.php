@@ -21,14 +21,14 @@
 				<div class="card-body pt-3 pb-0">
 					<form action="valida_funcional.php" method="post">
 						<div class="form-group">
-							<input class="form-control" type="text" name="funcional" placeholder="funcional">
+							<input class="form-control" type="password" name="funcional" placeholder="funcional">
 						</div>
 						<?php if (isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
 						 	<div class="text-danger"> 
 						 		funcional inválida
 						 	</div>
-
 						<?php } ?>
+						
 						<?php if (isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
 						 	<div class="text-danger">
 						 		faça o login para acessar

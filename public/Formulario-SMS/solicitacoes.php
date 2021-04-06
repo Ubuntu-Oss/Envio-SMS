@@ -54,18 +54,28 @@ if ($_SESSION['permissao'] == 'nao'){
 			<div class="bg-success text-white pt-2 mb-2 d-flex justify-content-center">
 				<h5>Base separada!</h5>
 			</div>
+			<script>setTimeout(function(){window.location.href="solicitacoes.php"},3000)</script>
+		<?php } ?>
+
+		<?php if(isset($_GET['execucao']) && $_GET['execucao'] == 2){ ?>
+			<div class="bg-danger text-white pt-2 mb-2 d-flex justify-content-center">
+				<h5>Base já foi separada!</h5>
+			</div>
+			<script>setTimeout(function(){window.location.href="solicitacoes.php"},3000)</script>
 		<?php } ?>
 
 		<?php if(isset($_GET['erro']) && $_GET['erro'] == 1){ ?>
 			<div class="bg-danger text-white pt-2 mb-2 d-flex justify-content-center">
-				<h5>Erro: base já separada!</h5>
+				<h5>Erro: ID inexistente!</h5>
 			</div>
+			<script>setTimeout(function(){window.location.href="solicitacoes.php"},3000)</script>
 		<?php } ?>
 
 		<?php if(isset($_GET['erro_f']) && $_GET['erro_f'] != ""){ ?>
 			<div class="bg-danger text-white pt-2 mb-2 d-flex justify-content-center">
 				<h5>Erro: filiais <?= $_GET['erro_f'] ?> inválidas!</h5>
 			</div>
+			<script>setTimeout(function(){window.location.href="solicitacoes.php"},4000)</script>
 		<?php } ?>
 
 		<div class="mt-1 mb-0 d-flex justify-content-center">
@@ -73,11 +83,13 @@ if ($_SESSION['permissao'] == 'nao'){
 		</div>
 		<div class="container bg-light ml-0" style="width:250px">
 				<form name="frm2" action="base_controller.php" method="post">
-					<div class="form-group d-inline-block ml-1 mt-3">
-						<input class="form-control" type="number" name="Id" min="1" max="999999">
-					</div>
-					<div class="form-group d-inline-block">
-						<input class="btn btn-danger" type="submit" value="Executar">
+					<div class="form-group row">
+						<div class="form-group col">	
+							<input class="form-control" type="number" name="Id" min="1" max="999999">
+						</div>
+						<div class="form-group col">
+							<input class="btn btn-danger" type="submit" value="Executar">
+						</div>
 					</div>
 				</form>
 		</div>
@@ -121,7 +133,7 @@ if ($_SESSION['permissao'] == 'nao'){
 				</tbody> 
 			</table>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
    		<script src="js/bootstrap.min.js"></script>	
 	</body>
