@@ -32,8 +32,7 @@ function validarCampos(){
 	$('#CelularesAdicionais').removeClass('is-invalid');
 
 
-
- 	if (frm.NomeEvento.value == ""){
+ 	if (frm.NomeEvento.value.trim() == ""){
  		$('#erro1').remove();
  		$('#NomeEvento').after('<div id="erro1" class="invalid-feedback">Campo obrigatório.</div>');
  		$('#NomeEvento').addClass('is-invalid');
@@ -41,7 +40,7 @@ function validarCampos(){
  		erro=1;
  	}
 	
-	if (frm.LocalEvento.value == ""){
+	if (frm.LocalEvento.value.trim() == ""){
  		$('#erro2').remove();
  		$('#LocalEvento').after('<div id="erro2" class="invalid-feedback">Campo obrigatório.</div>');
  		$('#LocalEvento').addClass('is-invalid');
@@ -74,7 +73,7 @@ function validarCampos(){
 		erro=1;
 	}
 
-	if (frm.CodigoFilial.value == ""){
+	if (frm.CodigoFilial.value.trim() == ""){
 		$('#erro6').remove();
  		$('#CodigoFilial').after('<div id="erro6" class="invalid-feedback">Campo obrigatório.</div>');
  		$('#CodigoFilial').addClass('is-invalid');
@@ -129,6 +128,8 @@ function validarCampos(){
 		$('#CelularesAdicionais').addClass('is-invalid');
 		frm.CelularesAdicionais.focus();
 	}
+
+	frm.CelularesAdicionais.value = frm.CelularesAdicionais.value.trim();
 
 	if (erro==0){
 		frm.submit();
