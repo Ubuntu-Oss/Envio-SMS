@@ -19,7 +19,8 @@ if ($_SESSION['permissao'] == 'nao'){
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<title>SMS Feirão</title>
 	</head>
 
@@ -94,7 +95,7 @@ if ($_SESSION['permissao'] == 'nao'){
 				</form>
 		</div>
 		<div class="px-2">
-			<table class="table-striped table-bordered table-responsive" style="font-size: 12px;">
+			<table class="table-striped table-bordered table-responsive" style="font-size:0.75em;">
 				<thead class="table-dark">
 					<tr>
 						<th style="text-align:center; width:2%">ID </th>
@@ -108,7 +109,7 @@ if ($_SESSION['permissao'] == 'nao'){
 						<th style="text-align:center; width:3%">Filial(is)</th>
 						<th style="text-align:center; width:5%">CQ (meses)</th>
 						<th style="text-align:center; width:5%">CAQ (meses)</th>
-						<th style="text-align:center; width:11.5%">Celular(es) adicional(is)</th>
+						<th style="text-align:center; width:10%">Celular(es) adicional(is)</th>
 						<th style="text-align:center; width:22%">Fraseologia</th>
 					</tr>
 				</thead>
@@ -126,7 +127,7 @@ if ($_SESSION['permissao'] == 'nao'){
 							<td style="width: 3%; word-break:break-all"><?= $solicitacao->filial ?></td>
 							<td style="width: 5%"><?= $solicitacao->meses_q ?></td>
 							<td style="width: 5%"><?= $solicitacao->meses_aq ?></td>
-							<td style="width: 11.5%; word-break:break-all"><?= $solicitacao->celulares_adicionais ?></td>
+							<td style="width: 10%; word-break:break-all"><?= $solicitacao->celulares_adicionais ?></td>
 							<td style="width: 22%"><?= $solicitacao->fraseologia ?></td>
 						</tr>
 					<?php } ?>
